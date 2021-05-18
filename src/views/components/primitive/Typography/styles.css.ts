@@ -1,7 +1,10 @@
 import { style, styleVariants } from "@vanilla-extract/css";
 import { palette } from "../../../../globalTheme.css";
 
-export const common = style({});
+export const common = style({
+  margin: 0,
+  padding: 0,
+});
 
 export const variants = styleVariants({
   h1: {
@@ -48,6 +51,9 @@ export const colorVariants = styleVariants({
   },
   error: {
     color: palette.redPrimary,
+  },
+  light: {
+    color: palette.lightPrimary,
   },
 });
 

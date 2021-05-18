@@ -7,6 +7,7 @@ export const common = style({
   ":hover": {
     cursor: "pointer",
   },
+  outline: "none",
 });
 
 export const colorVariants = styleVariants({
