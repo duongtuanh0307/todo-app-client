@@ -4,7 +4,7 @@ import * as styles from "./styles.css";
 type Props = {
   component?: ElementType;
   variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "body1" | "body2" | "body3";
-  color?: "primary" | "error";
+  color?: "primary" | "error" | "light";
   align?: "center" | "left" | "right";
 };
 
@@ -16,13 +16,13 @@ export const Typography: FC<Props> = ({
   align = "left",
 }) => {
   const CustomizeTag = component;
-  const { variants, colorVariants, alignVariants } = styles;
+  const { common, variants, colorVariants, alignVariants } = styles;
 
   return (
     <CustomizeTag
-      className={`${variants[variant]} ${color && colorVariants[color]} ${
-        alignVariants[align]
-      }`}
+      className={`${common} ${variants[variant]} ${
+        color && colorVariants[color]
+      } ${alignVariants[align]}`}
     >
       {children}
     </CustomizeTag>

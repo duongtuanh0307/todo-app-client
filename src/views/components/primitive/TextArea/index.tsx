@@ -6,30 +6,32 @@ type Props = {
   disabled?: boolean;
   error?: boolean;
   customeClass?: string;
-  value?: string;
-  onChange: (e: FormEvent<HTMLInputElement>) => void;
+  rows: number;
+  value: string;
+  onChange: (e: FormEvent<HTMLTextAreaElement>) => void;
 };
 
-export const InputText: FC<Props> = ({
+export const TextArea: FC<Props> = ({
   placeHolder,
   disabled,
   error,
   customeClass,
-  value,
+  rows,
   onChange,
+  value,
 }) => {
   const { common, statusVariant } = styles;
   return (
-    <input
+    <textarea
       disabled={disabled}
       className={`${common} ${disabled && statusVariant["disabled"]} ${
         error && statusVariant["error"]
       } ${customeClass}
       `}
-      type='text'
       placeholder={placeHolder}
-      value={value}
+      rows={rows}
       onChange={onChange}
+      value={value}
     />
   );
 };
